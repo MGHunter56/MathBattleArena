@@ -123,6 +123,4 @@ def determinar_ganador(game_id):
     del active_games[game_id]
 
 if __name__ == '__main__':
-    print("\nIniciando servidor...")
-    print(f"Accede en: http://localhost:5000")
-    socketio.run(app, host='0.0.0.0', port=5000, debug=True)
+    socketio.run(app)
