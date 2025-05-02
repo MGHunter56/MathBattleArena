@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Battle Arena - Métodos Numéricos</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Math Battle Arena</h1>
+            <p>Competencia de Métodos Numéricos</p>
+        </header>
+
+        <!-- Panel de Lobby -->
+        <div id="lobby" class="panel">
+            <h2>Bienvenido</h2>
+            <button id="findMatchBtn" class="btn">Buscar Partida</button>
+        </div>
+
+        <!-- Mensaje de Espera -->
+        <div id="waitingMsg" class="panel hidden">
+            <h2>Buscando oponente...</h2>
+            <button id="cancelBtn" class="btn cancel">Cancelar</button>
+        </div>
+
+        <!-- Panel de Juego -->
+        <div id="gamePanel" class="panel hidden">
+            <h2>Problema</h2>
+            <div id="problemStatement" class="problem"></div>
+            <div id="answerFormat" class="format"></div>
+            
+            <div class="input-area">
+                <input type="text" id="answerInput" placeholder="Tu respuesta" autocomplete="off">
+                <button id="submitBtn" class="btn">Enviar</button>
+                <div class="timer">Tiempo: <span id="timerDisplay">0.00</span>s</div>
+            </div>
+        </div>
+
+        <!-- Panel de Resultados -->
+        <div id="resultsPanel" class="panel hidden">
+            <h2>Resultados</h2>
+            <div class="result-container">
+                <div id="playerResult" class="result-box">
+                    <h3>Tu respuesta</h3>
+                    <p id="playerAnswerText"></p>
+                    <p id="playerTime"></p>
+                    <p id="playerError"></p>
+                </div>
+                <div id="opponentResult" class="result-box">
+                    <h3>Oponente</h3>
+                    <p id="opponentAnswerText"></p>
+                    <p id="opponentTime"></p>
+                    <p id="opponentError"></p>
+                </div>
+            </div>
+            <div id="winnerAnnouncement" class="winner-message"></div>
+            <div id="correctSolution" class="correct-answer"></div>
+            <button id="playAgainBtn" class="btn">Jugar Otra Vez</button>
+        </div>
+    </div>
+
+    <script src="/static/js/game.js"></script>
+</body>
+</html>
